@@ -1,10 +1,9 @@
-package com.joshua.application;
+package com.joshua.application.model;
 
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;

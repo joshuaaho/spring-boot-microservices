@@ -1,5 +1,7 @@
-package com.joshua.application;
+package com.joshua.application.controller;
 
+import com.joshua.application.model.User;
+import com.joshua.application.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 

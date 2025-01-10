@@ -1,6 +1,6 @@
-package com.joshua.application;
+package com.joshua.application.repository;
 
-import jakarta.persistence.Entity;
+import com.joshua.application.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

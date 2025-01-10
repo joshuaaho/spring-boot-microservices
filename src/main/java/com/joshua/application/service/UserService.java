@@ -1,10 +1,11 @@
-package com.joshua.application;
+package com.joshua.application.service;
 
+import com.joshua.application.model.User;
+import com.joshua.application.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
