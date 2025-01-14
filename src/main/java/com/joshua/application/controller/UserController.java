@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -30,8 +31,8 @@ public class UserController {
     }
 
     @GetMapping("/api/users/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id){
-        User user = userService.fetchUser(id);
+    public ResponseEntity<Optional<User>> getUser(@PathVariable Long id){
+       Optional user = userService.fetchUser(id);
 
         if (user == null){
             return  ResponseEntity.notFound().build();

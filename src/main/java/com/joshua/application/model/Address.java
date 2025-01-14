@@ -2,9 +2,13 @@ package com.joshua.application.model;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "addresses")
+
+@Data
+@NoArgsConstructor
+@Entity(name = "addresses")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
