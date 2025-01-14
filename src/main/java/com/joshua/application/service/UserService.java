@@ -1,6 +1,9 @@
 package com.joshua.application.service;
 
+import com.joshua.application.dto.AddressDTO;
+import com.joshua.application.dto.UserRequest;
 import com.joshua.application.dto.UserResponse;
+import com.joshua.application.model.Address;
 import com.joshua.application.model.User;
 import com.joshua.application.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -39,7 +43,9 @@ public class UserService {
         response.setId(String.valueOf(user.getId()));
         response.setFirstName(user.getFirstName());
         response.setLastName(user.getLastName());
-        response.setAddress(user.getRole());
+        response.setRole(user.getRole());
+        response.setEmail(user.getEmail());
+        response.setPhone(user.getPhone());
 
         if (user.getAddress() != null){
             AddressDTO addressDTO = new AddressDTO();
