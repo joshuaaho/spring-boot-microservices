@@ -1,5 +1,6 @@
 package com.joshua.application.controller;
 
+import com.joshua.application.dto.UserResponse;
 import com.joshua.application.model.User;
 import com.joshua.application.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,7 @@ public class UserController {
 
     private final UserService userService;
     @GetMapping("/api/users")
-    public ResponseEntity<List<User>> getAllUsers(){
+    public ResponseEntity<List<UserResponse>> getAllUsers(){
         return new ResponseEntity<>(userService.fetchAllUsers(), HttpStatus.OK);
     }
 
