@@ -1,6 +1,7 @@
 package com.joshua.application.controller;
 
 import com.joshua.application.dto.UserResponse;
+import com.joshua.application.dto.UserRequest;
 import com.joshua.application.model.User;
 import com.joshua.application.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -26,14 +27,14 @@ public class UserController {
     }
 
     @PostMapping("/api/users")
-    public ResponseEntity<String> createUser(@RequestBody User user){userService.addUser(user);
+    public ResponseEntity<String> createUser(@RequestBody UserRequest userRequest){userService.addUser(userRequest);
       return ResponseEntity.ok("User added successfully");
 
     }
 
     @GetMapping("/api/users/{id}")
-    public ResponseEntity<Optional<User>> getUser(@PathVariable Long id){
-       Optional user = userService.fetchUser(id);
+    public ResponseEntity<UserResponse> getUser(@PathVariable Long id){
+       Optional<UserResponse> user = userService.fetchUser(id);
 
         if (user == null){
             return  ResponseEntity.notFound().build();
